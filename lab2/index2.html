@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<style type="text/css">
+	body {
+		line-height: 30px;
+	}
+#tbl {
+	border: solid 1px black;
+	border-collapse:collapse;
+}
+#tbl td, th {
+	border: solid 1px black;
+	margin: 10px 10px;
+}
+#tbl #header {
+	background-color:hotpink;
+}
+#tbl tr.oddr {
+	background-color:#f0f0f0;
+}
+#tbl tr.evenr {
+	background-color:yellow;
+}
+#tbl tr:hover{
+	background-color: green;
+	cursor: pointer;
+}
+	</style>
+
+</head>
+<body>
+	<table id="tbl">
+		<thead id="header">
+			<tr>
+				<th><input type="checkbox" id="checkAll" onclick ="checkAll()";></th>
+			<th>Họ và tên</th>
+			<th>Ngày sinh</th>
+			<th>Giới tính</th>
+			</tr>
+		</thead>
+		<tbody>
+			<tr class="oddr" onclick="checkRow(this)">
+				<td><input type="checkbox" name="check" onclick="check(this)"></td>
+				<td>Hoàng Thị Thảo</td>
+				<td>23/6/1990</td>
+				<td>Nữ</td>
+			</tr>
+			<tr class="evenr" onclick="checkRow(this)">
+				<td><input type="checkbox" name="check" onclick="check(this)"></td>
+				<td>Ngô Mạnh Quân</td>
+				<td>14/4/1992</td>
+				<td>Nam</td>
+			</tr>
+			<tr class="oddr" onclick="checkRow(this)">
+				<td><input type="checkbox" name="check" onclick="check(this)"></td>
+				<td>Nguyễn Thanh Tùng</td>
+				<td>27/9/1991</td>
+				<td>Nam</td>
+			</tr>
+			<tr onclick="checkRow(this)" class="evenr">
+				<td ><input type="checkbox" name="check" onclick="check(this)"></td>
+				<td>Hoàng Thị Ngân</td>
+				<td>12/12/1992</td>
+				<td>Nữ</td>
+			</tr>
+
+		</tbody>
+	</table>
+	<script type="text/javascript" src="list.js"></script>
+</body>
+</html>

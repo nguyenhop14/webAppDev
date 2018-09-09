@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<link rel=stylesheet href="form.css">
+</head>
+<body>
+	<div id="content">
+		<form method="post" action="" id="login">
+			<label class="line">Họ tên: </label>
+			<input type="text" name="name" id="name" class="binding" onkeyup="DoKeyup(event, this,'address')"><span class="error" id="err_name"></span><br>
+			<label class="line">Địa chỉ: </label>
+			<input type="text" name="address" id="address"> <span class="error" id="err_address" ></span><br>
+			<label class="line">Giới tính: </label>
+			<input type="radio" name="gender" id="male" checked="checked"> Nam
+			<input type="radio" name="gender" id="female">  Nữ<br>
+			<label class="line">Ngày sinh: </label>
+			<input type="text" name="birthday" id="birthday" class="binding"><span class="error" id="err_date"> </span><br>
+			<label class="line">E-mail</label>
+			<input type="text" name="email" id="email" class="binding"><span class="error" id="err_email" ></span><br>
+			<label class="line">Điện thoại: </label>
+			<input type="text" name="phone" id="phone" onkeyup="javascript:DoKeyup(event, this, 'qtri');"><br>
+			<label class="line">Khóa đăng kí: </label>
+			<input type="checkbox" name="course" id="qtri"  onkeyup="javascript:DoKeyup(event, this, 'english');"> Quản Trị
+			<input type="checkbox" name="course" id="english"  onkeyup="javascript:DoKeyup(event, this, 'technology');"> Tiếng Anh
+			<input type="checkbox" name="course" id="technology"  onkeyup="javascript:DoKeyup(event, this, 'username');"> CNTT<br>
+			<label class="line">Tên sử dụng: </label>
+			<input type="text" name="username" id="username" class="binding"  onkeyup="javascript:DoKeyup(event, this, 'password');"><span class="error" id="err_username"></span><br>
+			<label class="line">Mật khẩu: </label>
+			<input type="password" name="password" id="password" class="binding"  onkeyup="javascript:DoKeyup(event, this, 'repass');"><span class="error" id="err_pass"></span><br>
+			<label class="line">Gõ lại mật khẩu: </label>
+			<input type="password" name="repass" id="repass" class="binding" ><span class="error" id="err_repass"></span><br>
+			<label class="line">Ghi chú: </label>
+			<textarea></textarea><br>
+			<input type="button" value="Gửi" onclick="check()">
+			<input type="button" value="Hủy" onclick="cancel()">
+		</form>
+	</div>
+	<script type="text/javascript" src="form.js"></script>
+</body>
+</html>

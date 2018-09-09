@@ -1,0 +1,13 @@
+#content {
+	line-height: 40px;
+}
+.line {
+	float: left;
+	width: 150px;
+}
+.binding {
+	background-color: green;
+}
+.error {
+	color: red;
+}
