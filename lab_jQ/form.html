@@ -1,0 +1,96 @@
+<!DOCTYPE html><html><head>
+	<style type="text/css">
+	    body {
+	    	line-height: 30px;
+	    }
+		.line {
+			float: left;
+			width: 150px;
+		}
+		.error {
+			color: red;
+		}
+	</style>
+	<title>Form Nhập</title>
+	<meta charset=utf-8>
+	<meta name="author" content="Nguyễn Thị Hợp">
+	<meta name=description content="Điền thông tin người dùng">
+	<meta name=viewport content="width=device-width, initial-scale=1">
+</head><body>
+	<form action="" method="POST">
+		<label class="line">Mã:</label>
+		<input  type="text" id="code"><span class="error" id="err_code"></span><br>
+		<label class="line">Họ tên:</label>
+		<input  type="text" id="name"><span class="error" id="err_name"></span><br>
+		<label class="line">Ngày sinh:</label>
+		<input  type="text" id="date"><span id="err_date" class="error"></span><br>
+		<label class="line">Giới tính:</label>
+		<select id="sex">
+			<option value="male" selected="selected">Nam</option>
+			<option value="female">Nữ</option>
+		</select><br>
+		<label class="line">Quê quán:</label>
+		<input  type="text" id="country"><br>
+		<label class="line">&nbsp</label>
+		<input type="button" id="btSubmit" value="Chấp nhận">
+		<input type="button" value="Hủy">
+	</form>
+	<script language="javascript" src="http://code.jquery.com/jquery-2.0.0.min.js"></script>
+	<script src="jQ1.js"></script>
+	<script type="text/javascript">
+		function codeKeyUp(e) {
+		        if (e.keyCode == 13) $("#name").focus();
+		    };
+		function nameKeyUp(e) {
+		        if (e.keyCode == 13) $("#date").focus();
+		    };
+		function dateKeyUp(e) {
+		        if (e.keyCode == 13) $("#sex").focus();
+		    };
+		function sexKeyUp(e) {
+		        if (e.keyCode == 13) $("#country").focus();
+		    };
+		$("#code").focus();
+		$("#code").keyup(codeKeyUp);
+		$("#name").keyup(nameKeyUp);
+		$("#date").keyup(dateKeyUp);
+		$("#sex").keyup(sexKeyUp);
+		// $("#name").keyup(function($this){
+		// 	alert($(this).keyCode);
+		// 	if ($(this).keyCode == 13) {
+		// 		$("#date").focus();
+		// 	}
+		// });
+		// $("#date").keyup(function(){
+		// 	if (this.keyCode == 13) {
+		// 		$("#sex").focus();
+		// 	}
+		// })
+		// $("#sex").keyup(function(){
+		// 	if (this.keyCode == 13) {
+		// 		$("#country").focus();
+		// 	}
+		// })
+		// $("#name").blur(function(){
+		// 	$("#name").val(chuanHoa($("#name").val()));
+		// })
+		$("#btSubmit").click(function(){
+			$("#err_name").html("");
+			$("#err_code").html("");
+			//kiểm tra
+			if ($("#name").val() == "") {
+				$("#err_name").html(" * Chưa nhập họ tên.");
+			}
+			if ($("#code").val() == "") {
+				$("#err_code").html(" * Chưa nhập mã.");
+			}
+			if ($("#date") != "") {
+				if (isDate($("#date").val())) {
+					$("#err_date").html(" * Nhập ngày sinh không đúng.")
+				}
+			}
+		})
+
+	</script>
+</body>
+

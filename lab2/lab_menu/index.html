@@ -1,0 +1,60 @@
+<!DOCTYPE html><html><head>
+	
+	<style type="text/css">
+	#tb1 {
+		border: solid 1px white;
+		border-collapse: collapse; 
+	}
+	#tb1 tr, td {
+		border: solid 1px white;
+	}
+	#tb1 td {
+		padding: 10px;
+	}
+	.normal {
+				background-color: pink;
+	}
+	.selected {
+		background-color: #FF1493	;
+	}
+	#tb1 td:hover{
+	background-color: #FF69B4;
+}
+    </style>
+    <title>Trang tin</title>
+	<meta name='application-name' content="Trang tin">
+	<meta name="author" content="Nguyễn Thị Hợp">
+	<meta name="description" content="Nội dung của menu">
+</head><body><title>Đăng kí</title>
+	<meta name='application-name' content="Đăng kí">
+	<meta name="author" content="Nguyễn Thị Hợp">
+	<meta name="description" content="Đăng kí thông tin học viên">
+	<meta name="keyword" content="đăng kí, thông tin, khóa học">
+	<table>
+		<tr><td>
+				<table id="tb1">
+		<tr><td class="normal" onclick="avoid(this)">&#187; Quản lý cán bộ (Đăng kí thông tin)</td></tr>
+		<tr><td class="normal" onclick="avoid(this)">&#187; Phân quyền</td></tr>
+		<tr><td class="normal" onclick="avoid(this)">&#187; Cổng thông tin đào tạo</td></tr>
+		<tr><td class="normal" onclick="avoid(this)">&#187; Quản lý văn bản và hồ sơ công việc</td></tr>
+		<tr><td class="normal" onclick="avoid(this)">&#187; Hành chính công</td></tr>
+		<tr><td class="normal" onclick="avoid(this)">&#187; Hệ thống thông tin báo cáo</td></tr>
+
+	</table>
+</td>
+<td valign="top" id="content"></td>
+</tr>
+	</table>
+	<script>
+		var selected = null;
+		function avoid(r){
+			if (selected !=null) {
+				selected.className = "normal";
+			}
+			selected = r;
+			selected.className = "selected";
+			document.getElementById("content").innerHTML = selected.innerHTML.substring(1);
+		}		
+	</script>
+</body>
+</html>
